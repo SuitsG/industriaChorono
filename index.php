@@ -16,16 +16,16 @@
         <section class="main__section">
             <a href="/sections/create.php" class="main__section__a">
                 <div class="main__section__a__div">
-                    <img src="/assets/create.jpg" alt="" class="main__section__a__div__img">
+                    <img class="main__section__a__div__img" src="/assets/create.jpg">
                     <p class="main__section__a__div__p">Create (crear)
-                        Dentro de este módulo se podrán crear nuevos usuarios (empleados).</p>
+                        Dentro de este módulo se podrán crear nuevos usuarios (empleados).</p>
                 </div>
             </a>
             <a href="/sections/delete.php" class="main__section__a">
                 <div class="main__section__a__div">
                     <img src="/assets/delete.jpg" alt="" class="main__section__a__div__img">
                     <p class="main__section__a__div__p">Delete (eliminar)
-                        Dentro de este módulo se podrán eliminar permanentemente usuarios (empleados).</p>
+                        Dentro de este módulo se podrán eliminar permanentemente usuarios (empleados).</p>
                 </div>
             </a>
             <a href="/sections/update.php" class="main__section__a">
@@ -46,7 +46,30 @@
         </section>
     </main>
     <footer class="footer">
-    <p>Laura es una chinita consentida por mami</p>
+        <section class="footer__section">
+            <h2>Servicios</h2>
+            <p class="footer__section__p">Consultas</p>
+            <p class="footer__section__p">Actualizaciones</p>
+            <p class="footer__section__p">Regalos</p>
+        </section>
+        <section class="footer__section">
+            <h2 class="footer__section__h2">Soporte</h2>
+            <p class="footer__section__p">Servicio en linea</p>
+            <p class="footer__section__p">Chat en vivo</p>
+            <p class="footer__section__p">Correo Electrónico</p>
+        </section>
+        <section class="footer__section">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos los mejores de programación</p>
+            <p>El mejor style</p>
+            <p>Darada</p>
+        </section>
+        <section class="footer__section">
+            <h2>Redes</h2>
+            <p class="footer__section__p">Instagram</p>
+            <p class="footer__section__p">Facebook</p>
+            <p class="footer__section__p">Tiktok</p>
+        </section>
     </footer>
 </body>
 
