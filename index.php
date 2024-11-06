@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chrono</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/assets/logoIndex.webp" type="image/x-icon">
 </head>
 
 <body>
@@ -14,28 +15,28 @@
     </header>
     <main class="main">
         <section class="main__section">
-            <a href="/sections/create.php" class="main__section__a">
+            <a href="/forms/formCreate.php" class="main__section__a">
                 <div class="main__section__a__div">
                     <img class="main__section__a__div__img" src="/assets/create.jpg">
                     <p class="main__section__a__div__p">Create (crear)
                         Dentro de este módulo se podrán crear nuevos usuarios (empleados).</p>
                 </div>
             </a>
-            <a href="/sections/delete.php" class="main__section__a">
+            <a href="/forms/formDelete.php" class="main__section__a">
                 <div class="main__section__a__div">
                     <img src="/assets/delete.jpg" alt="" class="main__section__a__div__img">
                     <p class="main__section__a__div__p">Delete (eliminar)
                         Dentro de este módulo se podrán eliminar permanentemente usuarios (empleados).</p>
                 </div>
             </a>
-            <a href="/sections/update.php" class="main__section__a">
+            <a href="/forms/formUpdate.php" class="main__section__a">
                 <div class="main__section__a__div">
                     <img src="/assets/update.jpg" alt="" class="main__section__a__div__img">
                     <p class="main__section__a__div__p">Actualización de datos
                         Dentro de este módulo se podrán realizar cambios sobre la base de datos.</p>
                 </div>
             </a>
-            <a href="/sections/consultation.php" class="main__section__a">
+            <a href="/forms/formConsultation.php" class="main__section__a">
                 <div class="main__section__a__div">
                     <img src="/assets/consult.jpg" alt="" class="main__section__a__div__img">
                     <p class="main__section__a__div__p">Consultas de datos
