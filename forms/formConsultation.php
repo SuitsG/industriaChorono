@@ -14,50 +14,50 @@
   <header class="header">Consultas</header>
   <main class="main">
     <section class="main__section">
-      <form action="" class="main__section__form">
+      <form action="/action/consultation.php" method="POST" class="main__section__form">
 
         <label class="label">
           <input
             type="radio"
             id="value-1"
             checked=""
-            name="value-radio"
-            value="value-1" />
+            name="consulta"
+            value="fechaCumpleaños" />
           <p class="text">Fechas de cumpleaños</p>
         </label>
 
         <label class="label">
-          <input type="radio" id="value-2" name="value-radio" value="value-2" />
+          <input type="radio" id="value-2" name="consulta" value="totalEmpleados" />
           <p class="text">Total de empleados</p>
         </label>
 
         <label class="label">
-          <input type="radio" id="value-3" name="value-radio" value="value-3" />
+          <input type="radio" id="value-3" name="consulta" value="totalMujeres" />
           <p class="text">Total mujeres</p>
         </label>
 
         <label class="label">
-          <input type="radio" id="value-3" name="value-radio" value="value-3" />
+          <input type="radio" id="value-4" name="consulta" value="totalHombres" />
           <p class="text">Total hombres</p>
         </label>
 
         <label class="label">
-          <input type="radio" id="value-3" name="value-radio" value="value-3" />
-          <p class="text">Sueldo basico de empleado</p>
-        </label>
-
-        <label class="label">
-          <input type="radio" id="value-3" name="value-radio" value="value-3" />
+          <input type="radio" id="value-3" name="consulta" value="totalNomina" />
           <p class="text">Total de la nómina</p>
         </label>
 
         <label class="label">
-          <input type="radio" id="value-3" name="value-radio" value="value-3" />
+          <input type="radio" id="value-3" name="consulta" value="empleadosMinino" />
+          <p class="text">Empleados que ganan el mínimo</p>
+        </label>
+
+        <label class="label">
+          <input type="radio" id="value-3" name="consulta" value="empleadosMasMinino" />
           <p class="text">Empleados que ganan más del mínimo</p>
         </label>
 
         <label class="label">
-          <input type="radio" id="value-3" name="value-radio" value="value-3" />
+          <input type="radio" id="value-3" name="consulta" value="tablaEmpleados" />
           <p class="text">Tabla de empleados</p>
         </label>
 

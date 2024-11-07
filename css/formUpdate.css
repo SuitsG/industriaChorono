@@ -5,6 +5,7 @@
 :root {
   --color-black: black;
   --color-white: white;
+  --color-azul: #B7CDE4;
   --fuente-lilita: "Lilita One", sans-serif;
   --fuente-reboto: "Roboto Serif", serif;
 }
@@ -25,12 +26,51 @@ body {
 }
 
 /*Header*/
-.header {
+.header__h1 {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  font-size: 5rem;
+}
+
+
+/*Main*/
+.main{
   display: grid;
   place-items: center;
 }
 
-.header {
+.main__section{
+  border-radius: 2rem;
+  background-color: var(--color-azul);
   padding: 1rem;
-  font-size: 5rem;
+  width: 30%;
+}
+ .main__section__form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+ }
+
+.main__section__form__div {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+}
+
+.main__section__form__input{
+  font-family: var(--fuente-lilita);
+  padding: 0.3rem;
+  font-size: 1.5rem;
+border-radius: 0.5rem;
+border: none;
+}
+
+.main__section__form__button{
+  font-family: var(--fuente-lilita);
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border-radius: 1rem;
 }

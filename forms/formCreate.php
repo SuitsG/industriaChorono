@@ -26,7 +26,7 @@
 
         <div class="main__section__form__div">
           <label for="">Documento</label>
-          <input class="main__section__form__input" type="text" name="document">
+          <input class="main__section__form__input" type="number" name="document">
         </div>
 
         <div class="main__section__form__div">
@@ -51,7 +51,7 @@
 
         <div class="main__section__form__div">
           <label for="">Sueldo básico</label>
-          <input class="main__section__form__input" type="text" name="basicSalary">
+          <input class="main__section__form__input" type="number" name="basicSalary">
         </div>
 
         <div class="main__section__form__div">
