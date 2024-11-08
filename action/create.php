@@ -29,7 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stmt->bindParam(':basicSalary', $basicSalary);
 
   if ($stmt->execute()) {
-    echo "Empleado registrado exitosamente.";
+    header("Location: /view/viewUserCreated.php");
+    exit();
   } else {
     echo "Hubo un error al registrar al empleado.";
   }

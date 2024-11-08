@@ -30,17 +30,7 @@
           <input type="radio" id="value-2" name="consulta" value="totalEmpleados" />
           <p class="text">Total de empleados</p>
         </label>
-
-        <label class="label">
-          <input type="radio" id="value-3" name="consulta" value="totalMujeres" />
-          <p class="text">Total mujeres</p>
-        </label>
-
-        <label class="label">
-          <input type="radio" id="value-4" name="consulta" value="totalHombres" />
-          <p class="text">Total hombres</p>
-        </label>
-
+        
         <label class="label">
           <input type="radio" id="value-3" name="consulta" value="totalNomina" />
           <p class="text">Total de la nómina</p>

@@ -1,0 +1,73 @@
+/*Fuente*/
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --color-black: black;
+  --color-white: white;
+  --fuente-lilita: "Lilita One", sans-serif;
+  --fuente-reboto: "Roboto Serif", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fuente-lilita);
+  background-image: url(/assets/fontAll.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+}
+
+/*Header*/
+.header {
+  display: grid;
+  place-items: center;
+}
+
+.header__h1 {
+  padding: 1rem;
+  font-size: 5rem;
+}
+
+/*Main*/
+.main {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.main__section {
+  display: grid;
+  place-items: center;
+  width: 20rem;
+}
+
+.main__section div {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+/* .main__section__table {
+  
+
+} */
+
+.main__section__table td {
+  text-align: left;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  padding-right: 1rem;
+  
+}
+
+.main__section__p {
+  color: var(--color-white);
+  font-size: 2rem;
+}

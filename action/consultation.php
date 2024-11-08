@@ -1,57 +1,118 @@
 <?php
+session_start();
 require_once($_SERVER['DOCUMENT_ROOT'] . '/database/connection.php');
 
-// Verificamos que el formulario haya sido enviado
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // Recibir los datos del formulario
+
   $consulta = $_POST['consulta'];
+  switch ($consulta) {
 
-  // Consulta SQL para obtener los empleados
-  $sql = "SELECT nameEmployee, birthDate FROM employee WHERE MONTH(birthDate) = 11";
-  $stmt = $conexion->prepare($sql);
-  $stmt->execute();
+    case 'fechaCumpleaños':
+      $sql = "SELECT nameEmployee, DAY(birthDate) AS dia FROM employee WHERE MONTH(birthDate) = 05";
+      $stmt = $conexion->prepare($sql);
+      $stmt->execute();
+      $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $_SESSION['employees'] = $employees;
+      
+      /*Cantidad de corbatas*/
+      $sql = "SELECT COUNT(sex) AS masculino FROM employee WHERE sex = 'Masculino' AND MONTH(birthDate) = 05";
+      $stmt = $conexion->prepare($sql);
+      $stmt->execute();
+      $sexM = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $_SESSION['sexM'] = $sexM;
 
-  // Obtenemos todos los registros como un arreglo asociativo
-  $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      /*Cantidad de rosas*/
+      $sql = "SELECT COUNT(sex) AS femenino FROM employee WHERE sex = 'Femenino' AND MONTH(birthDate) = 05";
+      $stmt = $conexion->prepare($sql);
+      $stmt->execute();
+      $sexF = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $_SESSION['sexF'] = $sexF;
 
-  // Construcción de la tabla HTML para los resultados
-  $fechaCumpleaños = "
-    <section>
-      <div>
-        <h2>Fechas de cumpleaños</h2>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Fecha de Nacimiento</th>
-          </tr>
-        </thead>
-        <tbody>";
+      header("Location: /view/viewBirthDate.php");
+      exit();
+     
+      break;
 
-  // Generamos las filas de la tabla para cada empleado
-  foreach ($employees as $employee) {
-    $fechaCumpleaños .= "<tr>
-      <td>" . htmlspecialchars($employee['nameEmployee']) . "</td>
-      <td>" . htmlspecialchars($employee['birthDate']) . "</td>
-    </tr>";
+    case 'totalEmpleados':
+
+      /*Contar cantidad de empleaso*/
+      $sql = "SELECT COUNT(idEmployee) AS totalEmployee FROM employee";
+      $stmt = $conexion->prepare($sql);
+      $stmt->execute();
+      $totalEmployee = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $_SESSION['totalEmployee'] = $totalEmployee;
+
+      /*Contar cantidad de empleados mujeres*/
+      $sql = "SELECT COUNT(sex) AS totalWomen FROM employee WHERE sex = 'Femenino'";
+      $stmt = $conexion->prepare($sql);
+      $stmt->execute();
+      $totalWomen = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $_SESSION['totalWomen'] = $totalWomen;
+      
+      /*Contar cantidad de empleados Hombres*/
+      $sql = "SELECT COUNT(sex) AS totalMen FROM employee WHERE sex = 'Masculino'";
+      $stmt = $conexion->prepare($sql);
+      $stmt->execute();
+      $totalMen = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $_SESSION['totalMen'] = $totalMen;
+
+      header("Location: /view/viewTotalEmployees.php");
+      exit();
+      break;
+
+    case 'totalNomina':
+
+      // Acción para mostrar el total de la nómina
+      $sql = "SELECT SUM(basicSalary) AS totalPayroll FROM employee";
+      $stmt = $conexion->prepare($sql);
+      $stmt->execute();
+      $totalPayroll = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $_SESSION['totalPayroll'] = $totalPayroll;
+
+      header("Location: /view/viewTotalPayroll.php");
+      exit();
+      break;
+
+    case 'empleadosMinino':
+      // Acción para mostrar los empleados que ganan el mínimo
+      $sql = "SELECT nameEmployee, basicSalary FROM employee WHERE basicSalary = (SELECT MIN(basicSalary) FROM employee)";
+      $stmt = $conexion->prepare($sql);
+      $stmt->execute();
+      $empleadosMinino = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      echo "Empleados que ganan el mínimo:";
+      foreach ($empleadosMinino as $empleado) {
+        echo "<br>" . $empleado['nameEmployee'] . " - " . $empleado['basicSalary'];
+      }
+      break;
+
+    case 'empleadosMasMinino':
+      // Acción para mostrar los empleados que ganan más del mínimo
+      $sql = "SELECT nameEmployee, basicSalary FROM employee WHERE basicSalary > (SELECT MIN(basicSalary) FROM employee)";
+      $stmt = $conexion->prepare($sql);
+      $stmt->execute();
+      $empleadosMasMinino = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      echo "Empleados que ganan más del mínimo:";
+      foreach ($empleadosMasMinino as $empleado) {
+        echo "<br>" . $empleado['nameEmployee'] . " - " . $empleado['basicSalary'];
+      }
+      break;
+
+    case 'tablaEmpleados':
+      
+      $sql = "SELECT * FROM employee ORDER BY nameEmployee ASC";
+      $stmt = $conexion->prepare($sql);
+      $stmt->execute();
+      $employees = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $_SESSION['employees'] = $employees;
+      header("Location: /view/viewTablaEmpleados.php");
+      exit();
+      break;
+
+    default:
+      echo "No se ha seleccionado una opción válida.";
+      break;
   }
-
-  // Cerramos el cuerpo y la tabla
-  $fechaCumpleaños .= "
-        </tbody>
-      </table>
-    </section>";
-
-  // Utilizamos match para determinar qué mostrar
-  $sot = match ($consulta) {
-    'fechaCumpleaños' => $fechaCumpleaños,
-    'totalEmpleados' => "Total de empleados: [aquí el número]",
-    default => "No se ha seleccionado una opción válida",
-  };
-
-  // Mostramos el resultado
-  echo $sot;
 } else {
   echo "Error: No se han enviado datos del formulario.";
 }
