@@ -19,7 +19,10 @@ $sexF = $_SESSION['sexF'] ?? [];
 
 <body>
     <header class="header">
-        <h1 class="header__h1">INDUSTRIA CHRONO</h1>
+        <a href="/index.php">Inicio</a>
+        <div>    
+            <h1 class="header__h1">INDUSTRIA CHRONO</h1>
+        </div>
     </header>
     <main class="main">
         <section class="main__section">
@@ -41,9 +44,9 @@ $sexF = $_SESSION['sexF'] ?? [];
         <section class="main__section">
             <div>
                 <p class="main__section__p">TOTAL CORBATAS</p>
-                <p><?=$sexM[0]['masculino']; ?></p>
+                <p class="main__section__p"><?= $sexM[0]['masculino']; ?></p>
                 <p class="main__section__p">TOTAL DE RAMOS DE ROSAS</p>
-                <p><?=$sexF[0]['femenino']; ?></p>
+                <p class="main__section__p"><?= $sexF[0]['femenino']; ?></p>
             </div>
         </section>
 

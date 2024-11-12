@@ -74,28 +74,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit();
       break;
 
-    case 'empleadosMinino':
-      // Acción para mostrar los empleados que ganan el mínimo
-      $sql = "SELECT nameEmployee, basicSalary FROM employee WHERE basicSalary = (SELECT MIN(basicSalary) FROM employee)";
+    case 'empleadosMinimo':
+      
+      $sql = "SELECT nameEmployee, basicSalary FROM employee WHERE basicSalary <= 1300000";
       $stmt = $conexion->prepare($sql);
       $stmt->execute();
       $empleadosMinino = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      echo "Empleados que ganan el mínimo:";
-      foreach ($empleadosMinino as $empleado) {
-        echo "<br>" . $empleado['nameEmployee'] . " - " . $empleado['basicSalary'];
-      }
+      $_SESSION['empleadosMinino'] = $empleadosMinino;
+
+      header("Location: /view/minSalaryEmployee.php");
+      exit();
       break;
 
-    case 'empleadosMasMinino':
+    case 'empleadosMasMinimo':
       // Acción para mostrar los empleados que ganan más del mínimo
-      $sql = "SELECT nameEmployee, basicSalary FROM employee WHERE basicSalary > (SELECT MIN(basicSalary) FROM employee)";
+      $sql = "SELECT nameEmployee, basicSalary FROM employee WHERE basicSalary > 1300000";
       $stmt = $conexion->prepare($sql);
       $stmt->execute();
-      $empleadosMasMinino = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      echo "Empleados que ganan más del mínimo:";
-      foreach ($empleadosMasMinino as $empleado) {
-        echo "<br>" . $empleado['nameEmployee'] . " - " . $empleado['basicSalary'];
-      }
+      $empleadosMasMinimo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $_SESSION['empleadosMasMinimo'] = $empleadosMasMinimo;
+
+      header("Location: /view/maxSalaryEmployee.php");
+      exit();
       break;
 
     case 'tablaEmpleados':

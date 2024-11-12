@@ -37,12 +37,12 @@
         </label>
 
         <label class="label">
-          <input type="radio" id="value-3" name="consulta" value="empleadosMinino" />
+          <input type="radio" id="value-3" name="consulta" value="empleadosMinimo" />
           <p class="text">Empleados que ganan el mínimo</p>
         </label>
 
         <label class="label">
-          <input type="radio" id="value-3" name="consulta" value="empleadosMasMinino" />
+          <input type="radio" id="value-3" name="consulta" value="empleadosMasMinimo" />
           <p class="text">Empleados que ganan más del mínimo</p>
         </label>
 

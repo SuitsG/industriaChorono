@@ -53,6 +53,10 @@ $employees = $_SESSION['employees'] ?? [];
       </table>
     </section>
   </main>
+  <footer class="footer">
+
+  <p>.</p>
+  </footer>
 </body>
 
 </html>

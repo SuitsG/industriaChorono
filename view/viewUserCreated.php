@@ -11,6 +11,7 @@
 
 <body>
     <header class="header">
+        <a href="/index.php">Inicio</a>
         <h1 class="header__h1">INDUSTRIA CHRONO</h1>
     </header>
     <main class="main">
