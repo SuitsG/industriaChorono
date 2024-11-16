@@ -30,7 +30,7 @@
           <input type="radio" id="value-2" name="consulta" value="totalEmpleados" />
           <p class="text">Total de empleados</p>
         </label>
-        
+
         <label class="label">
           <input type="radio" id="value-3" name="consulta" value="totalNomina" />
           <p class="text">Total de la nómina</p>
@@ -50,8 +50,9 @@
           <input type="radio" id="value-3" name="consulta" value="tablaEmpleados" />
           <p class="text">Tabla de empleados</p>
         </label>
-
-        <button type="submit" class="main__section__form__button">Enviar</button>
+        <div class="consultas__button">
+          <button type="submit" class="main__section__form__button">Enviar</button>
+        </div>
       </form>
     </section>
 

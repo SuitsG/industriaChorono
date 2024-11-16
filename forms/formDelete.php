@@ -12,18 +12,30 @@
 
 <body>
   <header class="header">
-    <h1 class="header__h1">INDUSTRIA CHRONO</h1>
+    <h1 class="header__h1">BIENBENIDO A INDUSTRIAS CHRONO</h1>
   </header>
   <main class="main">
     <section class="main__section">
       <form action="/action/delete.php" method="POST" class="main__section__form">
         <label for="">Documento</label>
         <input class="main__section__form__input" type="text" name="document" pattern="\d{5,10}" maxlength="10" title="El documento debe tener entre 5 y 10 dígitos" required>
-        <button class="main__section__form__button" type="submit">Eliminar empleado</button>
+        <button class="main__section__form__button" type="submit">
+          <p> Eliminar empleado</p>
+        </button>
       </form>
     </section>
   </main>
-  <footer class="footer"></footer>
+  <footer class="footer">
+
+    
+    <div class="newtons-cradle">
+      <div class="newtons-cradle__dot"></div>
+      <div class="newtons-cradle__dot"></div>
+      <div class="newtons-cradle__dot"></div>
+      <div class="newtons-cradle__dot"></div>
+    </div>
+
+  </footer>
 </body>
 
 </html>

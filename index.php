@@ -19,28 +19,31 @@
                 <div class="main__section__a__div">
                     <img class="main__section__a__div__img" src="/assets/create.jpg">
                     <p class="main__section__a__div__p">Create (crear)
-                        <br> Dentro de este módulo se podrán crear nuevos usuarios (empleados).</p>
+                        <br> Dentro de este módulo se podrán crear nuevos usuarios (empleados).
+                    </p>
                 </div>
             </a>
             <a href="/forms/formDelete.php" class="main__section__a">
                 <div class="main__section__a__div">
                     <img src="/assets/delete.jpg" alt="" class="main__section__a__div__img">
                     <p class="main__section__a__div__p">Delete (eliminar)
-                    <br>  Dentro de este módulo se podrán eliminar permanentemente usuarios (empleados).</p>
+                        <br> Dentro de este módulo se podrán eliminar permanentemente usuarios (empleados).
+                    </p>
                 </div>
             </a>
             <a href="/forms/formUpdate.php" class="main__section__a">
                 <div class="main__section__a__div">
                     <img src="/assets/update.jpg" alt="" class="main__section__a__div__img">
                     <p class="main__section__a__div__p">Actualización de datos
-                    <br>   Dentro de este módulo se podrán realizar cambios sobre la base de datos.</p>
+                        <br> Dentro de este módulo se podrán realizar cambios sobre la base de datos.
+                    </p>
                 </div>
             </a>
             <a href="/forms/formConsultation.php" class="main__section__a">
                 <div class="main__section__a__div">
                     <img src="/assets/consult.jpg" alt="" class="main__section__a__div__img">
                     <p class="main__section__a__div__p">Consultas de datos
-                    <br>    Dentro de este módulo se podrán consultar fechas de cumpleaños, salarios, cantidad de empleados, etc.
+                        <br> Dentro de este módulo se podrán consultar fechas de cumpleaños, salarios, cantidad de empleados, etc.
                     </p>
                 </div>
             </a>

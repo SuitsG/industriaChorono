@@ -141,10 +141,17 @@ body {
   }
 }
 
+.consultas__button{
+  display: grid;
+  place-items: center;
+}
+
 .main__section__form__button {
   font-size: 2rem;
   font-family: var(--fuente-lilita);
   border-radius: 0.5rem;
   color: var(--color-white);
   background-color: var(--color-black);
+  width: 14rem;
+  padding: 0.5rem;
 }

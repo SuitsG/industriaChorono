@@ -33,7 +33,7 @@
 
         <div class="main__section__form__div">
           <label for="sex">Sexo</label>
-          <select class="main__section__form__input" name="sex" required>
+          <select class="main__section__form__select" name="sex" required>
             <option value="">Seleccione...</option>
             <option value="Masculino">Masculino</option>
             <option value="Femenino">Femenino</option>

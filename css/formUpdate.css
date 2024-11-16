@@ -17,7 +17,7 @@
 
 body {
   font-family: var(--fuente-lilita);
-  background-image: url(/assets/fontAll.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.048), rgba(0, 0, 0, 0.192)), url(/assets/fontAll.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;

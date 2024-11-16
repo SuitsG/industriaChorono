@@ -69,6 +69,13 @@ font-size: 2rem;
   border-radius: 5px;
   padding: 0.2rem;
 }
+
+.main__section__form__select{
+ font-family: var(--fuente-lilita);
+  height: 2rem;
+  border-radius: 5px;
+  padding: 0.2rem; 
+}
 .main__section__form__button {
   font-family: var(--fuente-lilita);
   font-size: 2rem;
